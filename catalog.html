@@ -30,14 +30,52 @@
   	<main>
   			<h1 class="page-title">Магазин готовых шаблонов</h1>
         <div class="filters">
-        <h3 class="visually-hidden">Фильтр товаров</h3>
-        <!-- Здесь будет форма -->
+           <h3 class="visually-hidden">Фильтр товаров</h3>
+        <form class="price" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset>
+            <legend>Стоимость</legend>
+          <label>
+          <input type="range" min="0" max="15000" step="100" name="price">
+        </label>
+        <label>
+                      от <input type="text" name="minvalue" placeholder="0">
+        </label>
+        <label>
+                     до <input type="text" name="maxvalue" placeholder="15000">
+        </label>
+          <img src="img/range-button.svg" width="25" height="25" alt="Фильтр">
+        </fieldset>
+        <fieldset>
+          <legend>Сетка</legend>
+          <label>
+          <input type="radio" name="grid" value="Адаптивная" checked>Адаптивная
+        </label>
+        <label>
+          <input type="radio" name="grid" value="Фиксированная">Фиксированная
+        </label>
+        <label>
+          <input type="radio" name="grid" value="Резиновая">Резиновая
+          </label>
           <img src="img/radio-on.svg" width="25" height="25" alt="Выбор">
           <img src="img/radio-off.svg" width="25" height="25" alt="Выбор">
-          <img src="img/filter-button.svg" width="25" height="25" alt="Фильтр">
+        </fieldset>
+        <fieldset>
+          <legend>Особенности</legend>
+          <input type="checkbox" id="slide" name="slide" checked>
+          <label for="slide">Слайдер</label>
+        <input type="checkbox" id="advantage" name="advantage"> 
+        <label for="advantage">Блок преимуществ</label>
+        <input type="checkbox" id="news" name="news" checked> 
+        <label for="news">Новости</label>
+        <input type="checkbox" id="gallery" name="gallery"> 
+        <label for="gallery">Галерея</label>
+        <input type="checkbox" id="form-cart" name="form-cart"> 
+        <label for="form-cart">Корзина</label>
           <img src="img/checkbox-off.svg" width="27" height="23" alt="Чекбокс">
           <img src="img/checkbox-on.svg" width="27" height="23" alt="Чекбокс">
-        
+          </fieldset>
+            <button type="submit">Показать</button>
+        </form>
       </div>
       <section class="assortment">
         <h3 class="">Сортировать</h3>
@@ -118,19 +156,19 @@
       </section>
   		</main>
   		<footer class="main-footer">
-  		<div class="map-location">
-  			<section class="contacts">
+      <div class="map-location">
+        <section class="contacts">
           <img src="img/map.jpg" width="1440" height="416" alt="Карта">
-  			<h2 class="name">Nёrds design studio</h2>
-  			<p>191186, Санкт-Петербург, 
-  			ул. Б. Конюшенная, д. 19/8</p>
-  			<p>тел. +7 (812) 275-75-75</p>
-  			<a href="#">Напишите нам</a>
-  		</section>
-  	</div>
-  		
-  		<ul class="socials">
-  			<li class="socials-button">
+        <p class="company-name">Nёrds design studio</p>
+        <p>191186, Санкт-Петербург,<br> 
+        ул. Б. Конюшенная, д. 19/8</p>
+        <p>тел. +7 (812) 275-75-75</p>
+        <button class="button" type="button">Напишите нам</button>
+      </section>
+    </div>
+      
+      <ul class="socials">
+        <li class="socials-button">
           <a href="#"><img src="img/vk-icon.svg" width="79" height="79" alt="Вконтакте"></a>
         </li>
         <li class="socials-button">
@@ -139,22 +177,32 @@
         <li class="socials-button">
           <a href="#"><img src="img/insta-icon.svg" width="79" height="79" alt="Instagram"></a>
         </li>
-  		</ul>
-  		<div class="discount">
-  		<p class="call-to-action">Давайте дружить, это выгодно!</p>
-  		<p>Скидка 10% для друзей из социальных сетей.</p>
-  	</div>
-  		</footer>
-  		<section class="modal">
-  			<p class="write-us">Напишите нам</p>
-  			<p>Ваше имя:</p>
-  			<p>Ваш e-mail:</p>
-  			<p>Текст письма</p>
-  			<button type="submit">Отправить</button>
-  			<span class="modal-close">
+      </ul>
+      <div class="discount">
+      <p class="call-to-action">Давайте дружить, это выгодно!</p>
+      <p>Скидка 10% для друзей из социальных сетей.</p>
+    </div>
+      </footer>
+      <section class="modal">
+        <form class="write-to-us" action="https://echo.htmlacademy.ru" method="post">
+        <p class="feedback">Напишите нам</p>
+        <p>
+          <label for="feedback-fullname">Ваше имя:</label>
+          <input type="text" name="fullname" id="feedback-fullname" placeholder="Имя Фамилия">
+      </p>
+        <p>
+          <label for="feedback-email">Ваш e-mail:</label>
+          <input type="email" name="email" id="feedback-email" placeholder="email@example.com">
+        </p>
+        <p>
+        <label for="feedback-text">Текст письма</label>
+         <textarea name="text" id="feedback-text" placeholder="В свободной форме" rows="5"></textarea>
+      </p>
+        <button class="button-feedback" type="submit">Отправить</button>
+        <button class="modal-close" type="button">
           <img src="img/close-cross.svg" width="21" height="21" alt="Закрыть">
-        x
-      </span>
-  		</section>
-  	</body>
+      </button>
+    </form>
+      </section>
+    </body>
 </html>
